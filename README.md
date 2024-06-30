@@ -87,12 +87,18 @@ This project is an Elderly Human Recognition System.Human Activity Recognition 7
 ## Folder Structure
 
 │
-├── app.py # Main Flask application
-├── requirements.txt # List of Python packages required for the project
+├──models/
+| └──lstm_model.h5
+├──test_data/
+| └──new.csv
+├──web
 ├── templates/
 │ └── index.html # HTML template for the web interface
+| └── results.html #result template for the web interface
 ├── static/
 │ └── images/
 │ └── Screenshot.png # Placeholder image for the system
 └── README.md # This README file
+├── app.py # Main Flask application
+├── requirements.txt # List of Python packages required for the project
 
