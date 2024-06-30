@@ -2,13 +2,10 @@
 This project is an Elderly Human Recognition System.Human Activity Recognition 70+ (HAR70+) dataset is a professionally-annotated dataset containing 18 fit-to-frail older-adult subjects (70-95 years old) wearing two 3-axial accelerometers for around 40 minutes during a semi-structured free-living protocol. The sensors were attached to the right thigh and lower back. The Project designed to handle the uploading of files of patients data , stop predictions, and retrieve results through a web interface. The system uses Flask for the backend and HTML/CSS with JavaScript for the frontend.
 
 ## Table of Contents
-- [Machine learning](#Machine learning)
+- [Machine learning](#machine-learning)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Folder Structure](#folder-structure)
-- [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Machine learning
 ### Data Collection and Cleaning
@@ -41,8 +38,6 @@ This project is an Elderly Human Recognition System.Human Activity Recognition 7
 - Trained the LSTM model, monitored performance metrics (e.g., loss, accuracy).
 
 ## Installation
-
-
 
 ### Steps
 1. Clone the repository:
