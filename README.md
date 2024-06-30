@@ -48,7 +48,7 @@ This project is an Elderly Human Recognition System.Human Activity Recognition 7
 1. Clone the repository:
     ```bash
     git clone https://github.com/HaroonMalik771/Human_activity_recognition_system.git
-    cd elderly-human-recognition
+   
     ```
 
 2. Create a virtual environment and activate it:
@@ -87,18 +87,24 @@ This project is an Elderly Human Recognition System.Human Activity Recognition 7
 ## Folder Structure
 
 │
-├──models/
-| └──lstm_model.h5
-├──test_data/
-| └──new.csv
-├──web
-├── templates/
-│ └── index.html # HTML template for the web interface
-| └── results.html #result template for the web interface
-├── static/
-│ └── images/
-│ └── Screenshot.png # Placeholder image for the system
-└── README.md # This README file
-├── app.py # Main Flask application
-├── requirements.txt # List of Python packages required for the project
+├── models/
+│   └── lstm_model.h5             # Saved LSTM model
+│
+├── test_data/
+│   └── new.csv                   # Example test data file
+│
+├── web/
+│   ├── static/
+│   │   └── images/
+│   │       └── Screenshot.png    # Placeholder image
+│   │
+│   ├── templates/
+│   │   ├── index.html            # HTML template for main interface
+│   │   └── results.html          # HTML template for results page
+│   │
+│   ├── app.py                    # Main Flask application
+│   └── requirements.txt          # List of Python packages required
+│
+└── README.md                     # Project README file
+
 
