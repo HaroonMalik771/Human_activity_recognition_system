@@ -47,7 +47,7 @@ This project is an Elderly Human Recognition System.Human Activity Recognition 7
 ### Steps
 1. Clone the repository:
     ```bash
-    git clone https://github.com/HaroonMalik771/elderly-human-recognition.git
+    git clone https://github.com/HaroonMalik771/Human_activity_recognition_system.git
     cd elderly-human-recognition
     ```
 
