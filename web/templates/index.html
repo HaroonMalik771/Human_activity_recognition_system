@@ -1,61 +1,5 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Elderly Human Recognition System</title>
-    <img src="D:/Semester 7/Human_activity_recognition_system/web/src/images/Screenshot 2024-06-29 014300.png" alt="Elderly Human Recognition System" style="width: 100%; height: auto;">
-</head>
-<body>
-    <h1>Upload File</h1>
-    <form action="/upload" method="post" enctype="multipart/form-data">
-        <input type="file" name="file">
-        <input type="submit" value="Upload">
-    </form>
 
-    <h1>Stop Prediction</h1>
-    <form id="stop-form" method="post">
-        <input type="text" name="file_id" placeholder="File ID">
-        <input type="submit" value="Stop">
-    </form>
-
-    <h1>Get Results</h1>
-    <form id="results-form" method="get">
-        <input type="text" name="file_id" placeholder="File ID">
-        <input type="submit" value="Get Results">
-    </form>
-
-    <script>
-        document.getElementById('stop-form').onsubmit = function(event) {
-            event.preventDefault();
-            const formData = new FormData(event.target);
-            const file_id = formData.get('file_id');
-            fetch('/stop', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ file_id: file_id })
-            })
-            .then(response => response.json())
-            .then(data => alert(data.message || data.error));
-        };
-
-        document.getElementById('results-form').onsubmit = function(event) {
-            event.preventDefault();
-            const file_id = new FormData(event.target).get('file_id');
-            fetch('/results/' + file_id)
-            .then(response => response.json())
-            .then(data => {
-                if (data.error) {
-                    alert(data.error);
-                } else {
-                    console.log(data);
-                    alert('Check the console for results.');
-                }
-            });
-        };
-    </script>
-</body>
-</html> -->
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -121,8 +65,7 @@
         <h1>Elderly Human Recognition System</h1>
         <img src="{{ url_for('static', filename='images/Screenshot 2024-06-29 021615.png') }}" alt="Elderly Human Recognition System" class="system-image">
         
-
-        <form action="/upload" method="post" enctype="multipart/form-data" class="upload-form">
+        <form action="/upload" method="post" enctype="multipart/form-data" class="upload-form" id="upload-form">
             <input type="file" name="file">
             <input type="submit" value="Upload">
         </form>
@@ -141,7 +84,18 @@
     </div>
 
     <script>
-         document.getElementById('stop-form').onsubmit = function(event) {
+        document.getElementById('upload-form').onsubmit = function(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            fetch('/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => alert(data.message || data.error));
+        };
+
+        document.getElementById('stop-form').onsubmit = function(event) {
             event.preventDefault();
             const formData = new FormData(event.target);
             const file_id = formData.get('file_id');
@@ -153,21 +107,12 @@
             .then(response => response.json())
             .then(data => alert(data.message || data.error));
         };
+
         document.getElementById('results-form').onsubmit = function(event) {
             event.preventDefault();
             const file_id = new FormData(event.target).get('file_id');
-            fetch('/results/' + file_id)
-            .then(response => response.json())
-            .then(data => {
-                if (data.error) {
-                    alert(data.error);
-                } else {
-                    console.log(data);
-                    alert('Check the console for results.');
-                }
-            });
+            window.location.href = '/results/' + file_id;
         };
     </script>
 </body>
 </html>
-           
