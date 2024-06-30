@@ -86,6 +86,8 @@ This project is an Elderly Human Recognition System.Human Activity Recognition 7
 
 ## Folder Structure
 
+```
+project-root/
 │
 ├── models/
 │   └── lstm_model.h5             # Saved LSTM model
@@ -106,5 +108,5 @@ This project is an Elderly Human Recognition System.Human Activity Recognition 7
 │   └── requirements.txt          # List of Python packages required
 │
 └── README.md                     # Project README file
-
+```
 
